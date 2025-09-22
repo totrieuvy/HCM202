@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./css/App.css";
+import vietnamFlag from "./assets/vietnam-flag.gif";
+
 import MiniGame from "./MiniGame";
 
 const App = () => {
@@ -79,7 +81,7 @@ const App = () => {
     <>
       <div className="background">
         <img
-          src="/src/assets/vietnam-flag.gif"
+          src={vietnamFlag}
           alt="Vietnam Flag Background"
           style={{
             width: "100vw",
