@@ -1,16 +1,32 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./css/App.css";
-import vietnamFlag from "./assets/vietnam-flag.gif";
-
+import FLAG from "./assets/vietnam-flag.gif";
+import BOSTOM from "./assets/boston-C63CgLHY.png";
+import CATON from "./assets/caton-CKfsCMDu.png";
+import MAIL from "./assets/mail-sIXJWKef.png";
+import BACHOBG from "./assets/bachobg-B74Dg2wk.png";
+import YEAR_1911_1 from "./assets/1911_1-BFVo1QDS.jpg";
+import PHAP from "./assets/phap_1-8cQQJFxl.jpg";
+import YEAR_1920 from "./assets/1920-Bk2DqWwW.jpg";
+import YEAR_1921 from "./assets/1921-BT6eyVl3.jpg";
+import YEAR_1911_2 from "./assets/1911_1-drAEUR0R.png";
+import LIENXO from "./assets/lienxo_1-BtmAy91Z.jpg";
+import TRUNGQUOC from "./assets/trungquoc_1-CiQqM8E3.jpg";
+import DANGCONGSANVIETNAM from "./assets/dangcongsanvietnam-BJVASemK.jpg";
+import YEAR_1931 from "./assets/1931-CatV4Oen.jpg";
+import LIENXO2 from "./assets/lienxo_2-DtadcOoc.jpg";
+import YEAR_1935 from "./assets/1935-C10ibcDH.jpg";
+import YEAR_1941 from "./assets/1941-CtfBYOcV.jpg";
+import YEAR_1941_2 from "./assets/1941_2-B4GGwMOm.jpg";
+import CIRCLE from "./assets/circle-CAfYdNLx.png";
+import CMT8 from "./assets/cmt8-BguGeW5v.png";
+import FLAG_2 from "./assets/vietnam-flag2.mp4";
 import MiniGame from "./MiniGame";
 
 const App = () => {
   const [isFixed, setIsFixed] = useState(true);
-
-  const [hoveredSection, setHoveredSection] = useState(null);
-  const [imageContainerVisible, setImageContainerVisible] = useState(false);
-  const [isHoveringContainer, setIsHoveringContainer] = useState(false);
-  const imageContainerRef = useRef(null);
+  const [activeSection, setActiveSection] = useState(null);
+  const sectionRefs = useRef([]);
 
   // DATA FOR SECTIONS
   const sectionTitles = ["Đầu tháng 12 năm 1912", "Cuối năm 1913", "Đầu năm 1914", "Năm 1917"];
@@ -22,53 +38,27 @@ const App = () => {
     "Đoàn kết quốc tế là một chiến lược quan trọng trong cuộc đấu tranh của Việt Nam để chống lại các thế lực đế quốc, thực dân, và các nước xâm lược. Hồ Chí Minh chủ trương không chỉ đấu tranh độc lập cho Việt Nam mà còn thúc đẩy sự đoàn kết của các quốc gia bị áp bức để giải phóng lẫn nhau khỏi ách thống trị của các đế quốc phương Tây.",
   ];
 
-  const sectionImages = [
-    "/src/assets/boston-C63CgLHY.png",
-    "/src/assets/caton-CKfsCMDu.png",
-    "/src/assets/mail-sIXJWKef.png",
-    null,
-  ];
+  const sectionImages = [BOSTOM, CATON, MAIL, null];
 
-  // FIXED HOVER LOGIC
-  const handleSectionMouseEnter = (index) => {
-    setImageContainerVisible(true);
-    setHoveredSection(index);
-    setIsHoveringContainer(false);
-  };
-
-  const handleSectionMouseLeave = () => {
-    if (!isHoveringContainer) {
-      setTimeout(() => {
-        if (!isHoveringContainer) {
-          setImageContainerVisible(false);
-          setHoveredSection(null);
-        }
-      }, 100);
-    }
-  };
-
-  const handleImageContainerMouseEnter = () => {
-    setImageContainerVisible(true);
-    setIsHoveringContainer(true);
-    if (hoveredSection === null) {
-      setHoveredSection(0);
-    }
-  };
-
-  const handleImageContainerMouseLeave = () => {
-    setIsHoveringContainer(false);
-    setTimeout(() => {
-      if (hoveredSection === null) {
-        setImageContainerVisible(false);
-        setHoveredSection(null);
-      }
-    }, 150);
-  };
-
+  // SCROLL LOGIC TO DETECT VISIBLE SECTION
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       setIsFixed(scrollTop <= 10);
+
+      // Find the section currently in view
+      let currentSection = null;
+      sectionRefs.current.forEach((ref, index) => {
+        if (ref) {
+          const { top, bottom } = ref.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          // Consider a section active if its top is within the viewport or near the top
+          if (top >= 0 && top <= windowHeight * 0.5 && bottom > 0) {
+            currentSection = index;
+          }
+        }
+      });
+      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -77,11 +67,13 @@ const App = () => {
     };
   }, []);
 
+  const [showGame, setShowGame] = useState(false);
+
   return (
     <>
       <div className="background">
         <img
-          src={vietnamFlag}
+          src={FLAG}
           alt="Vietnam Flag Background"
           style={{
             width: "100vw",
@@ -106,7 +98,7 @@ const App = () => {
             <div
               className="intro"
               style={{
-                backgroundImage: `url("/src/assets/bachobg-B74Dg2wk.png")`,
+                backgroundImage: `url(${BACHOBG})`,
               }}
             >
               <h1 className="title" style={{ fontFamily: "heading-font" }}>
@@ -129,7 +121,7 @@ const App = () => {
           </div>
           <div className="content-course-intro">
             <div>
-              <img src="/src/assets/1911_1-BFVo1QDS.jpg" alt="logo" />
+              <img src={YEAR_1911_1} alt="logo" />
             </div>
             <div>
               <p className="title" style={{ fontFamily: "heading-font", fontWeight: 800 }}>
@@ -149,16 +141,15 @@ const App = () => {
                 {sectionTitles.map((title, index) => (
                   <div
                     key={index}
-                    className={`section-content-11 ${hoveredSection === index ? "hovered" : ""}`}
-                    onMouseEnter={() => handleSectionMouseEnter(index)}
-                    onMouseLeave={handleSectionMouseLeave}
+                    ref={(el) => (sectionRefs.current[index] = el)}
+                    className={`section-content-11 ${activeSection === index ? "active" : ""}`}
                   >
                     <h2
                       style={{
                         fontFamily: "heading-font",
-                        color: hoveredSection === index ? "#ffcd00" : "rgb(255, 205, 0)",
+                        color: activeSection === index ? "#ffcd00" : "rgb(255, 205, 0)",
                         transition: "all 0.3s ease",
-                        textShadow: hoveredSection === index ? "0 0 10px rgba(255, 205, 0, 0.5)" : "none",
+                        textShadow: activeSection === index ? "0 0 10px rgba(255, 205, 0, 0.5)" : "none",
                       }}
                     >
                       {title}
@@ -167,9 +158,9 @@ const App = () => {
                       style={{
                         fontFamily: "text-font",
                         fontSize: "20px",
-                        opacity: hoveredSection === index ? 1 : 0.8,
+                        opacity: activeSection === index ? 1 : 0.8,
                         transition: "all 0.3s ease",
-                        transform: hoveredSection === index ? "translateX(5px)" : "none",
+                        transform: activeSection === index ? "translateX(5px)" : "none",
                       }}
                     >
                       {sectionContents[index]}
@@ -179,29 +170,23 @@ const App = () => {
               </div>
 
               {/* PHẢI - IMAGE CONTAINER */}
-              <div
-                ref={imageContainerRef}
-                className={`image-container-11 ${imageContainerVisible ? "visible" : "hidden"}`}
-                onMouseEnter={handleImageContainerMouseEnter}
-                onMouseLeave={handleImageContainerMouseLeave}
-              >
+              <div className={`image-container-11 ${activeSection !== null ? "visible" : "hidden"}`}>
                 {/* ẢNH CHO SECTION 1-3 */}
-                {hoveredSection !== null && hoveredSection < 3 && imageContainerVisible && (
+                {activeSection !== null && activeSection < 3 && (
                   <img
-                    src={sectionImages[hoveredSection]}
-                    alt={`Section ${hoveredSection + 1} image`}
+                    src={sectionImages[activeSection]}
+                    alt={`Section ${activeSection + 1} image`}
                     className="img-slideshow fade-in"
                     style={{
                       position: "absolute",
                       top:
-                        hoveredSection === 0
+                        activeSection === 0
                           ? "25%"
-                          : hoveredSection === 1
+                          : activeSection === 1
                           ? "275px"
-                          : hoveredSection === 2
+                          : activeSection === 2
                           ? "540px"
                           : "25%",
-                      // Tính toán vị trí động dựa trên section đang hover
                       left: "55%",
                       transform: "translateX(-50%)",
                       maxWidth: "max-content",
@@ -210,13 +195,13 @@ const App = () => {
                       borderRadius: "12px",
                       boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
                       transition: "all 0.4s ease",
-                      opacity: imageContainerVisible ? 1 : 0,
-                      visibility: imageContainerVisible ? "visible" : "hidden",
+                      opacity: activeSection !== null ? 1 : 0,
+                      visibility: activeSection !== null ? "visible" : "hidden",
                     }}
                   />
                 )}
                 {/* PLACEHOLDER SECTION 4 */}
-                {hoveredSection === 3 && imageContainerVisible && (
+                {activeSection === 3 && (
                   <div className="no-image-placeholder fade-in">
                     <div className="placeholder-content">
                       <p
@@ -238,7 +223,7 @@ const App = () => {
                   </div>
                 )}
                 {/* DEFAULT STATE */}
-                {hoveredSection === null && imageContainerVisible && (
+                {activeSection === null && (
                   <div className="default-image-placeholder fade-in">
                     <p
                       style={{
@@ -248,28 +233,13 @@ const App = () => {
                         padding: "60px 20px",
                       }}
                     >
-                      Di chuột vào các mục bên trái để xem hình ảnh
+                      Cuộn để xem hình ảnh
                     </p>
                   </div>
                 )}
               </div>
             </div>
           </div>
-          {/* <div className="navbar hide">
-            <div
-              className="navbar-content-11"
-              style={{
-                transform: "translateX(0px)",
-                transition: "transform 0.3s",
-              }}
-            >
-              <span className="nav-item-11">Đầu tháng 12 năm 1912</span>
-              <span className="nav-item-11">Cuối năm 1913</span>
-              <span className="nav-item-11">Đầu năm 1914</span>
-              <span className="nav-item-11">Năm 1917</span>
-            </div>
-            <div className="progress-bar" style={{ width: "0%" }}></div>
-          </div> */}
           <div className="content-21">
             <div className="grid">
               <div>
@@ -289,7 +259,7 @@ const App = () => {
                 </p>
               </div>
               <div>
-                <img src="/src/assets/phap_1-8cQQJFxl.jpg" alt="21" />
+                <img src={PHAP} alt="21" />
               </div>
             </div>
             <div
@@ -313,7 +283,7 @@ const App = () => {
                 </strong>
               </p>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                <img src="/src/assets/1920-Bk2DqWwW.jpg" alt="logo" style={{ width: "850px", paddingTop: "80px" }} />
+                <img src={YEAR_1920} alt="logo" style={{ width: "850px", paddingTop: "80px" }} />
               </div>
             </div>
             <div
@@ -336,7 +306,7 @@ const App = () => {
                 </strong>
               </p>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                <img src="/src/assets/1921-BT6eyVl3.jpg" alt="logo" style={{ width: "850px", paddingTop: "80px" }} />
+                <img src={YEAR_1921} alt="logo" style={{ width: "850px", paddingTop: "80px" }} />
               </div>
             </div>
           </div>
@@ -344,7 +314,7 @@ const App = () => {
             <div
               className="intro"
               style={{
-                backgroundImage: `url("/src/assets/1911_1-drAEUR0R.png")`,
+                backgroundImage: `url(${YEAR_1911_2})`,
               }}
             >
               <h1 className="title" style={{ fontFamily: "heading-font" }}>
@@ -374,7 +344,7 @@ const App = () => {
                   justifyContent: "space-around",
                 }}
               >
-                <img src="/src/assets/lienxo_1-BtmAy91Z.jpg" alt="logo" style={{ width: "500px" }} />
+                <img src={LIENXO} alt="logo" style={{ width: "500px" }} />
               </div>
             </div>
           </div>
@@ -382,7 +352,7 @@ const App = () => {
             <div
               className="intro"
               style={{
-                backgroundImage: `url("/src/assets/1911_1-drAEUR0R.png")`,
+                backgroundImage: `url(${YEAR_1911_2})`,
               }}
             >
               <h1 className="title" style={{ fontFamily: "heading-font" }}>
@@ -421,7 +391,7 @@ const App = () => {
                   justifyContent: "space-around",
                 }}
               >
-                <img src="/src/assets/trungquoc_1-CiQqM8E3.jpg" alt="logo" style={{ width: "500px" }} />
+                <img src={TRUNGQUOC} alt="logo" style={{ width: "500px" }} />
               </div>
             </div>
           </div>
@@ -429,7 +399,7 @@ const App = () => {
             <div
               className="intro"
               style={{
-                backgroundImage: `url("/src/assets/1911_1-drAEUR0R.png")`,
+                backgroundImage: `url(${YEAR_1911_2})`,
               }}
             >
               <div style={{ fontFamily: "text-font" }}>
@@ -459,7 +429,7 @@ const App = () => {
             <div
               className="intro"
               style={{
-                backgroundImage: `url("/src/assets/1911_1-drAEUR0R.png")`,
+                backgroundImage: `url(${YEAR_1911_2})`,
               }}
             >
               <h1 className="title">NHỮNG NĂM 1928 - 1929</h1>
@@ -502,7 +472,7 @@ const App = () => {
             <div
               className="intro"
               style={{
-                backgroundImage: `url("/src/assets/1911_1-drAEUR0R.png")`,
+                backgroundImage: `url(${YEAR_1911_2})`,
               }}
             >
               <h1 className="title">THÀNH LẬP ĐẢNG CỘNG SẢN VIỆT NAM</h1>
@@ -528,7 +498,7 @@ const App = () => {
                   justifyContent: "space-around",
                 }}
               >
-                <img src="/src/assets/dangcongsanvietnam-BJVASemK.jpg" alt="logo" style={{ width: "500px" }} />
+                <img src={DANGCONGSANVIETNAM} alt="logo" style={{ width: "500px" }} />
               </div>
             </div>
           </div>
@@ -536,7 +506,7 @@ const App = () => {
             <div
               className="intro"
               style={{
-                backgroundImage: `url("/src/assets/1911_1-drAEUR0R.png")`,
+                backgroundImage: `url(${YEAR_1911_2})`,
               }}
             >
               <h1 className="title">NHỮNG NĂM 1931 - 1933</h1>
@@ -587,7 +557,7 @@ const App = () => {
                   justifyContent: "space-around",
                 }}
               >
-                <img src="/src/assets/1931-CatV4Oen.jpg" alt="logo" style={{ width: "400px" }} />
+                <img src={YEAR_1931} alt="logo" style={{ width: "400px" }} />
               </div>
             </div>
           </div>
@@ -595,7 +565,7 @@ const App = () => {
             <div
               className="intro"
               style={{
-                backgroundImage: `url("/src/assets/1911_1-drAEUR0R.png")`,
+                backgroundImage: `url(${YEAR_1911_2})`,
               }}
             >
               <h1 className="title">THỜI KỲ Ở LIÊN XÔ LẦN THỨ II</h1>
@@ -622,7 +592,7 @@ const App = () => {
                   justifyContent: "space-around",
                 }}
               >
-                <img src="/src/assets/lienxo_2-DtadcOoc.jpg" alt="logo" style={{ width: "400px" }} />
+                <img src={LIENXO2} alt="logo" style={{ width: "400px" }} />
               </div>
             </div>
           </div>
@@ -630,7 +600,7 @@ const App = () => {
             <div
               className="intro"
               style={{
-                backgroundImage: `url("/src/assets/1911_1-drAEUR0R.png")`,
+                backgroundImage: `url(${YEAR_1911_2})`,
               }}
             >
               <div style={{ fontFamily: "text-font" }}>
@@ -650,7 +620,7 @@ const App = () => {
                 </p>
               </div>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                <img src="/src/assets/1935-C10ibcDH.jpg" alt="logo" style={{ width: "900px", paddingTop: "80px" }} />
+                <img src={YEAR_1935} alt="logo" style={{ width: "900px", paddingTop: "80px" }} />
               </div>
             </div>
           </div>
@@ -658,7 +628,7 @@ const App = () => {
             <div
               className="intro"
               style={{
-                backgroundImage: `url("/src/assets/1911_1-drAEUR0R.png")`,
+                backgroundImage: `url(${YEAR_1911_2})`,
               }}
             >
               <h1 className="title">NHỮNG NĂM 1938 - 1941</h1>
@@ -686,7 +656,7 @@ const App = () => {
                   justifyContent: "space-around",
                 }}
               >
-                <img src="/src/assets/lienxo_2-DtadcOoc.jpg" alt="logo" style={{ width: "400px" }} />
+                <img src={LIENXO2} alt="logo" style={{ width: "400px" }} />
               </div>
             </div>
           </div>
@@ -694,7 +664,7 @@ const App = () => {
             <div
               className="intro"
               style={{
-                backgroundImage: `url("/src/assets/1911_1-drAEUR0R.png")`,
+                backgroundImage: `url(${YEAR_1911_2})`,
               }}
             >
               <div style={{ fontFamily: "text-font" }}>
@@ -714,7 +684,7 @@ const App = () => {
                 </p>
               </div>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                <img src="/src/assets/1941-CtfBYOcV.jpg" alt="logo" style={{ width: "900px", paddingTop: "80px" }} />
+                <img src={YEAR_1941} alt="logo" style={{ width: "900px", paddingTop: "80px" }} />
               </div>
             </div>
           </div>
@@ -722,7 +692,7 @@ const App = () => {
             <div
               className="intro"
               style={{
-                backgroundImage: `url("/src/assets/1911_1-drAEUR0R.png")`,
+                backgroundImage: `url(${YEAR_1911_2})`,
               }}
             >
               <div style={{ fontFamily: "text-font" }}>
@@ -741,7 +711,7 @@ const App = () => {
                 </p>
               </div>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                <img src="/src/assets/1941_2-B4GGwMOm.jpg" alt="logo" style={{ width: "900px", paddingTop: "80px" }} />
+                <img src={YEAR_1941_2} alt="logo" style={{ width: "900px", paddingTop: "80px" }} />
               </div>
             </div>
           </div>
@@ -750,7 +720,7 @@ const App = () => {
               <div
                 className="circle"
                 style={{
-                  backgroundImage: `url("/src/assets/circle-CAfYdNLx.png")`,
+                  backgroundImage: `url(${CIRCLE})`,
                 }}
               ></div>
               <div className="quote">
@@ -777,7 +747,7 @@ const App = () => {
             <div
               className="intro"
               style={{
-                backgroundImage: `url("/src/assets/cmt8-BguGeW5v.png")`,
+                backgroundImage: `url(${CMT8})`,
               }}
             >
               <p className="question" style={{ fontFamily: "text" }}>
@@ -794,7 +764,7 @@ const App = () => {
           </div>
           <div className="content-31" style={{ position: "relative", width: "100vw", height: "100vh" }}>
             <video
-              src="/src/assets/vietnam-flag2.mp4"
+              src={FLAG_2}
               autoPlay
               loop
               style={{

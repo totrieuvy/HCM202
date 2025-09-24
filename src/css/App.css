@@ -93,8 +93,7 @@ p * * {
 
 @font-face {
   font-family: heading;
-  src: url(/heading-font.otf) format("otf"),
-    url(/path/to/font.woff) format("woff");
+  src: url(/heading-font.otf) format("otf"), url(/path/to/font.woff) format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -1484,10 +1483,7 @@ p * * {
   font-size: 16px;
 }
 
-.fullscreen-dialog-game
-  .dialog-content
-  .question-block
-  .MuiFormControlLabel-root {
+.fullscreen-dialog-game .dialog-content .question-block .MuiFormControlLabel-root {
   color: #fff !important;
 }
 
