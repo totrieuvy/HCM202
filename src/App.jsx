@@ -809,10 +809,7 @@ const App = () => {
           <div className="content">
             <div className="content-association">
               <p className="title">Cùng với sự tham gia của</p>
-              <p>SS170622 - Nguyễn Trần Gia Hân</p>
-              <p>SE171848 - Lê Nguyễn Gia Bảo</p>
-              <p>DE170123 - Nguyễn Lê Thiện Đức</p>
-              <p>SE170897 - Phạm Nguyễn Hoàng Huy</p>
+              <p>SE183178 - Tô Triều Vỹ</p>
             </div>
           </div>
         </div>
