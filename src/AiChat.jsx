@@ -20,7 +20,7 @@ const AiChat = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://18.143.165.160:8080/hcm", {
+      const response = await fetch("https://aziky.duckdns.org/hcm", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
