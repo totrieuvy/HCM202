@@ -22,6 +22,7 @@ import CIRCLE from "./assets/circle-CAfYdNLx.png";
 import CMT8 from "./assets/cmt8-BguGeW5v.png";
 import FLAG_2 from "./assets/vietnam-flag2.mp4";
 import MiniGame from "./MiniGame";
+import AiChat from "./AiChat";
 
 const App = () => {
   const [isFixed, setIsFixed] = useState(true);
@@ -805,6 +806,7 @@ const App = () => {
             <MiniGame />
           </div>
         </div>
+        <AiChat />
         <div className="home-footer">
           <div className="content">
             <div className="content-association">
