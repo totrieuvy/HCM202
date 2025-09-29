@@ -3,17 +3,20 @@ import "./css/MiniGame.css";
 
 const questions = [
   {
-    question: "Hồ Chí Minh rời bến cảng Nhà Rồng để tìm đường cứu nước vào năm nào?",
+    question:
+      "Hồ Chí Minh rời bến cảng Nhà Rồng để tìm đường cứu nước vào năm nào?",
     options: ["1905", "1911", "1920", "1941"],
     answer: "1911",
   },
   {
-    question: "Hồ Chí Minh đã gửi Bản Yêu sách của nhân dân An Nam đến Hội nghị Versailles vào năm nào?",
+    question:
+      "Hồ Chí Minh đã gửi Bản Yêu sách của nhân dân An Nam đến Hội nghị Versailles vào năm nào?",
     options: ["1911", "1917", "1919", "1925"],
     answer: "1919",
   },
   {
-    question: "Quốc gia châu Á đầu tiên Hồ Chí Minh đặt chân đến trong hành trình tìm đường cứu nước là?",
+    question:
+      "Quốc gia châu Á đầu tiên Hồ Chí Minh đặt chân đến trong hành trình tìm đường cứu nước là?",
     options: ["Nhật Bản", "Trung Quốc", "Ấn Độ", "Thái Lan"],
     answer: "Nhật Bản",
   },
@@ -23,7 +26,8 @@ const questions = [
     answer: "1920",
   },
   {
-    question: "Tổ chức chính trị do Hồ Chí Minh thành lập năm 1941 để lãnh đạo phong trào cách mạng Việt Nam là?",
+    question:
+      "Tổ chức chính trị do Hồ Chí Minh thành lập năm 1941 để lãnh đạo phong trào cách mạng Việt Nam là?",
     options: [
       "Đông Dương Cộng sản Đảng",
       "Việt Nam Quốc dân Đảng",
@@ -33,27 +37,37 @@ const questions = [
     answer: "Mặt trận Việt Minh",
   },
   {
-    question: "Hồ Chí Minh từng bị chính quyền thực dân Anh bắt giam tại đâu vào năm 1931?",
+    question:
+      "Hồ Chí Minh từng bị chính quyền thực dân Anh bắt giam tại đâu vào năm 1931?",
     options: ["Pháp", "Trung Quốc", "Liên Xô", "Hong Kong"],
     answer: "Hong Kong",
   },
   {
-    question: "Tư tưởng chính trị nào có ảnh hưởng lớn nhất đến con đường cách mạng của Hồ Chí Minh?",
-    options: ["Chủ nghĩa dân chủ tư sản", "Chủ nghĩa Marx-Lenin", "Chủ nghĩa quân chủ", "Chủ nghĩa bảo thủ"],
+    question:
+      "Tư tưởng chính trị nào có ảnh hưởng lớn nhất đến con đường cách mạng của Hồ Chí Minh?",
+    options: [
+      "Chủ nghĩa dân chủ tư sản",
+      "Chủ nghĩa Marx-Lenin",
+      "Chủ nghĩa quân chủ",
+      "Chủ nghĩa bảo thủ",
+    ],
     answer: "Chủ nghĩa Marx-Lenin",
   },
   {
-    question: "Hồ Chí Minh trở về Việt Nam lần đầu sau hơn 30 năm bôn ba vào năm nào?",
+    question:
+      "Hồ Chí Minh trở về Việt Nam lần đầu sau hơn 30 năm bôn ba vào năm nào?",
     options: ["1925", "1930", "1941", "1945"],
     answer: "1941",
   },
   {
-    question: "Tờ báo nào do Hồ Chí Minh sáng lập để tuyên truyền cách mạng trong giai đoạn hoạt động ở Pháp?",
+    question:
+      "Tờ báo nào do Hồ Chí Minh sáng lập để tuyên truyền cách mạng trong giai đoạn hoạt động ở Pháp?",
     options: ["Nhân Dân", "Le Paria", "Thanh Niên", "Cờ Giải Phóng"],
     answer: "Le Paria",
   },
   {
-    question: "Hồ Chí Minh đã đọc bản Tuyên ngôn Độc lập của Việt Nam vào ngày nào?",
+    question:
+      "Hồ Chí Minh đã đọc bản Tuyên ngôn Độc lập của Việt Nam vào ngày nào?",
     options: ["30/4/1945", "2/9/1945", "19/8/1945", "7/5/1954"],
     answer: "2/9/1945",
   },
@@ -93,15 +107,20 @@ const MiniGame = () => {
   };
 
   return (
-    <div className="minigame-container">
+    <div
+      className="minigame-container"
+      style={{ backgroundImage: `url('../src/assets/quizz.webp')` }}
+    >
       <div className="minigame-header">
         <p>
-          <strong>Minigame:</strong> 30 năm tìm đường cứu nước của Chủ tịch Hồ Chí Minh
+          <strong>Minigame:</strong> 30 năm tìm đường cứu nước của Chủ tịch Hồ
+          Chí Minh
         </p>
         <p>
           Time Elapsed:{" "}
           <b>
-            {String(Math.floor(time / 60)).padStart(2, "0")}:{String(time % 60).padStart(2, "0")}
+            {String(Math.floor(time / 60)).padStart(2, "0")}:
+            {String(time % 60).padStart(2, "0")}
           </b>
         </p>
         <p>No. of questions: {questions.length}</p>
