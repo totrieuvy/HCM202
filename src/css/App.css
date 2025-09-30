@@ -4,7 +4,8 @@
   font-weight: 400;
   color-scheme: light dark;
   color: #ffffffde;
-  background-color: #242424;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -42,7 +43,8 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -59,7 +61,8 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #fff;
+    background: url("../../assets/vietnam-flag-bg.png") center center/cover
+      no-repeat;
   }
 
   a:hover {
@@ -67,7 +70,8 @@ button:focus-visible {
   }
 
   button {
-    background-color: #f9f9f9;
+    background: url("../../assets/vietnam-flag-bg.png") center center/cover
+      no-repeat;
   }
 }
 
@@ -77,8 +81,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p * * {
+h6 * * {
   color: #fff;
   margin: 0;
 }
@@ -93,7 +96,8 @@ p * * {
 
 @font-face {
   font-family: heading;
-  src: url(/heading-font.otf) format("otf"), url(/path/to/font.woff) format("woff");
+  src: url(/heading-font.otf) format("otf"),
+    url(/path/to/font.woff) format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -102,21 +106,9 @@ p * * {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -2;
+  z-index: -1;
   width: 100vw;
   height: 100vh;
-}
-
-.background video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.8;
 }
 
 .home-title {
@@ -151,7 +143,8 @@ p * * {
 .home-title .content .title {
   animation-delay: 0s;
   font-size: 25px;
-  background-color: #fce700;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   padding: 3px 20px;
   border-radius: 14px;
   color: #000;
@@ -246,7 +239,8 @@ p * * {
 .home-footer {
   width: 100vw;
   min-height: 100px;
-  background-color: #700000;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   padding: 30px;
 }
 
@@ -284,7 +278,8 @@ p * * {
   margin-top: 100px;
   text-align: center;
   padding: 8px 0;
-  background-color: #430000;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   font-size: 13px;
 }
 
@@ -324,7 +319,7 @@ p * * {
 }
 
 .content-11 .section-content-11 {
-  margin-bottom: 150px;
+  margin-bottom: 19rem;
   opacity: 0.5;
   transition: opacity 0.5s ease-in-out;
 }
@@ -338,7 +333,8 @@ p * * {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #340000;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   color: #fff;
   padding-top: 1rem;
   display: flex;
@@ -377,7 +373,8 @@ p * * {
 .content-11 .navbar .progress-bar {
   height: 3px;
   width: 100%;
-  background-color: #ff0;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   transition: width 0.3s ease-in-out;
 }
 
@@ -469,7 +466,8 @@ p * * {
 .content-21 .node {
   font-size: 28px;
   color: #000;
-  background-color: #fce700;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   width: 40px;
   height: 40px;
   display: inline-flex;
@@ -482,7 +480,8 @@ p * * {
   display: inline-block;
   font-size: 20px;
   color: #000;
-  background-color: #fff;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   padding: 5px 20px;
   border-radius: 20px;
   font-weight: 600;
@@ -556,7 +555,8 @@ p * * {
   height: 550px;
   background-position: center;
   background-size: contain;
-  background-color: transparent;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   animation: spinGithub 30s linear infinite;
   opacity: 0.2;
 }
@@ -654,7 +654,8 @@ p * * {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 10px;
-  background-color: #fff;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   color: #000;
   padding: 1px 10px;
   border-radius: 5px;
@@ -688,7 +689,8 @@ p * * {
   display: inline-block;
   font-size: 20px;
   color: #000;
-  background-color: #fff;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   padding: 5px 20px;
   border-radius: 20px;
   font-weight: 600;
@@ -715,7 +717,8 @@ p * * {
 
 .content-24 .content .section {
   margin: 10px 0;
-  background-color: #ff00008a;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   border-radius: 10px;
   box-shadow: 0 4px 10px #0000001a;
   border-left: 6px solid #f6ff00;
@@ -724,7 +727,8 @@ p * * {
 }
 
 .content-24 .content .section:hover {
-  background-color: #ff0000c4;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
 }
 
 .content-24 .content .section .section-header {
@@ -803,12 +807,14 @@ p * * {
   padding: 20px;
   color: #fff;
   text-align: center;
-  background-color: #ff000059;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   box-sizing: border-box;
 }
 
 .content-24 .content-2 .list-node:hover {
-  background-color: #fce700;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   color: #000;
 }
 
@@ -821,7 +827,8 @@ p * * {
   display: inline-block;
   font-size: 20px;
   color: #000;
-  background-color: #fff;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   padding: 5px 20px;
   border-radius: 20px;
   font-weight: 600;
@@ -887,7 +894,8 @@ p * * {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #340000;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   color: #fff;
   padding-top: 1rem;
   display: flex;
@@ -927,7 +935,8 @@ p * * {
 .content-25 .navbar .progress-bar {
   height: 3px;
   width: 100%;
-  background-color: #ff0;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   transition: width 0.3s ease-in-out;
 }
 
@@ -1030,7 +1039,8 @@ p * * {
 .content-31 .node {
   font-size: 28px;
   color: #000;
-  background-color: #fce700;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   width: 40px;
   height: 40px;
   display: inline-flex;
@@ -1049,7 +1059,8 @@ p * * {
   height: 800px;
   background-position: center;
   background-size: contain;
-  background-color: transparent;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   animation: spin 30s linear infinite;
   opacity: 0.5;
 }
@@ -1067,7 +1078,8 @@ p * * {
 .content-41 {
   min-height: 100vh;
   padding: 20px;
-  background-color: transparent;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
 }
 
 .content-41 .content {
@@ -1100,7 +1112,8 @@ p * * {
 .content-41 h1 {
   font-size: 25px;
   color: #000;
-  background-color: #fce700;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   padding: 10px 20px;
   border-radius: 20px;
   font-weight: 600;
@@ -1125,7 +1138,8 @@ p * * {
   padding: 10px 15px;
   border-radius: 15px;
   cursor: pointer;
-  background-color: #7e0000;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   text-align: left;
   font-size: 16px;
   transition: background-color 0.3s, color 0.3s;
@@ -1142,11 +1156,13 @@ p * * {
 }
 
 .content-41 .prompt-item:hover {
-  background-color: #c20000;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
 }
 
 .content-41 .prompt-item.selected {
-  background-color: #ffd900;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   color: #000;
 }
 
@@ -1159,7 +1175,8 @@ p * * {
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 9px;
-  background-color: #d90000;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -1174,7 +1191,8 @@ p * * {
 }
 
 .content-41 .btn-generate-prompt:disabled {
-  background-color: #ccc;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   color: #666;
   cursor: not-allowed;
 }
@@ -1188,7 +1206,8 @@ p * * {
 .content-41 .result {
   padding: 10px 20px;
   border-radius: 5px;
-  background-color: #7e0000;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   margin-bottom: 20px;
   font-size: 16px;
   width: 100%;
@@ -1200,11 +1219,13 @@ p * * {
 
 .content-41 .result::-webkit-scrollbar {
   width: 7px;
-  background-color: #f004;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
 }
 
 .content-41 .result::-webkit-scrollbar-thumb {
-  background-color: #bcbcbcae;
+  background: url("../../assets/vietnam-flag-bg.png") center center/cover
+    no-repeat;
   border-radius: 5px;
 }
 
@@ -1483,7 +1504,10 @@ p * * {
   font-size: 16px;
 }
 
-.fullscreen-dialog-game .dialog-content .question-block .MuiFormControlLabel-root {
+.fullscreen-dialog-game
+  .dialog-content
+  .question-block
+  .MuiFormControlLabel-root {
   color: #fff !important;
 }
 
@@ -1626,64 +1650,58 @@ p * * {
   font-size: 19px;
 }
 
+/* Main content section styling */
 .content-p1 {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .content-p1 .intro {
-  width: 100vw;
-  height: 100%;
+  width: 100%;
+  max-width: 1200px;
   z-index: 12;
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin: 40px;
 }
 
 .content-p1 .title {
-  width: 50%;
-  font-family: heading-font;
+  font-family: "heading-font", serif;
   font-weight: 800;
-  font-size: 60px;
-  color: #2b2929;
-  margin-top: 50px;
-  margin-bottom: 10px;
+  font-size: 48px;
+  color: #1a365d;
+  margin-bottom: 30px;
   text-align: center;
   z-index: 12;
-  color: #b71f1e;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1.2;
 }
 
 .content-p1 .content {
-  font-family: text-font;
-  font-weight: 500;
-  width: 50%;
-  font-size: 20px;
-  color: #000;
-  margin-bottom: 10px;
-  padding: 30px;
+  font-family: "text-font", "Georgia", serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 20px;
   z-index: 12;
+  max-width: 800px;
+  text-align: justify;
 }
 
-.content-p1 {
-  position: relative;
-  height: 900px;
-  min-height: 110vh;
-}
-
-.content-p1 .title {
-  width: 50%;
-  font-family: heading-font;
-  font-size: 60px;
-  color: #2b2929;
-  margin-bottom: 10px;
-  text-align: center;
-  z-index: 12;
-  color: #b71f1e;
-}
+/* Removed duplicate - merged with main .content-p1 definition above */
 
 .home-content {
   min-height: 100vh;
@@ -1691,62 +1709,337 @@ p * * {
   position: relative;
 }
 
-.content-p1 {
-  position: relative;
-  height: 400px;
-  min-height: 110vh;
-}
-
-.content-p1 .intro {
-  width: 100vw;
-  z-index: 12;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-.content-p1 .intro:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-}
-
-.content-p1 .title {
-  width: 50%;
-  font-size: 60px;
-  color: #2b2929;
-  margin-bottom: 10px;
-  text-align: center;
-  z-index: 12;
-  color: #b71f1e;
-}
-
+/* Responsive design for content sections */
 @media (max-width: 768px) {
+  .content-p1 .intro {
+    margin: 20px;
+    padding: 40px 20px;
+  }
+
   .content-p1 .title {
-    font-size: 30px;
+    font-size: 32px;
+  }
+
+  .content-p1 .content {
+    font-size: 16px;
   }
 }
 
-.content-p1 .content {
-  width: 50%;
-  font-size: 20px;
-  color: #000;
-  margin-bottom: 10px;
-  padding: 30px;
-  z-index: 12;
+@media (max-width: 480px) {
+  .content-p1 .intro {
+    margin: 10px;
+    padding: 30px 15px;
+  }
+
+  .content-p1 .title {
+    font-size: 24px;
+  }
+
+  .content-p1 .content {
+    font-size: 14px;
+  }
+}
+
+/* Additional content section styles for consistency */
+.content-21,
+.content-31,
+.content-course-intro {
+  padding: 60px 40px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+.content-grid,
+.content-course-intro .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.content-21 .title,
+.content-course-intro .title,
+.content-31 .title {
+  font-family: "heading-font", serif;
+  font-weight: 800;
+  color: #1a365d;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-21 .content,
+.content-course-intro .content,
+.content-31 .content {
+  font-family: "text-font", "Georgia", serif;
+  color: #000000;
+  line-height: 1.6;
+}
+
+.node {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-right: 15px;
+  display: inline-block;
+  min-width: 40px;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
-  .content-p1 .content {
-    font-size: 30px;
+  .content-grid,
+  .content-course-intro .grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .content-21,
+  .content-31,
+  .content-course-intro {
+    padding: 40px 20px;
+    margin: 20px;
+  }
+}
+
+/* Section title and content styles */
+.section-title {
+  font-family: "heading-font", serif;
+  color: #2d3748;
+  transition: all 0.3s ease;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.section-title.active {
+  color: #1a365d;
+  text-shadow: 0 2px 8px rgba(26, 54, 93, 0.3);
+  transform: translateX(5px);
+}
+
+.section-content {
+  font-family: "text-font", "Georgia", serif;
+  color: #000000;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.section-content.active {
+  opacity: 1;
+  color: #000000;
+  transform: translateX(5px);
+}
+
+/* Content section styling */
+.content-section {
+  margin-top: 50px;
+  padding: 40px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  margin-bottom: 30px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.content-image {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.content-image:hover {
+  transform: scale(1.02);
+}
+
+.content-image-small {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.content-image-small:hover {
+  transform: scale(1.02);
+}
+
+/* Placeholder styling */
+.placeholder-text {
+  text-align: center;
+  color: #4a5568;
+  font-style: italic;
+  margin: 0;
+  font-size: 16px;
+  padding: 40px 20px;
+  font-family: "text-font", "Georgia", serif;
+}
+
+.placeholder-icon {
+  font-size: 48px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.default-placeholder-text {
+  text-align: center;
+  color: #718096;
+  font-size: 18px;
+  padding: 60px 20px;
+  font-family: "text-font", "Georgia", serif;
+}
+
+/* Dynamic image slideshow styling - removed conflicting positioning */
+
+.quote-text {
+  color: #2d3748;
+  font-style: italic;
+  padding: 10px 0;
+  border-left: 4px solid #667eea;
+  padding-left: 20px;
+  margin: 20px 0;
+  display: block;
+  background-color: rgba(102, 126, 234, 0.1);
+  border-radius: 0 8px 8px 0;
+}
+
+@media (max-width: 768px) {
+  .content-section {
+    padding: 30px 20px;
+    margin: 20px 10px;
+  }
+
+  .content-image {
+    max-width: 100%;
+  }
+}
+
+/* Text content styling */
+.text-content {
+  font-family: "text-font", "Georgia", serif;
+  padding: 0 40px;
+}
+
+.text-content .content {
+  padding: 20px 0;
+  font-size: 18px;
+  color: #000000;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .text-content {
+    padding: 0 20px;
+  }
+
+  .text-content .content {
+    font-size: 16px;
+  }
+}
+
+/* Quote section styling */
+.quote-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin: 0px auto;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  width: 70%;
+}
+
+.quote-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.quote-title {
+  font-family: "heading-font", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.quote-content {
+  font-family: "text-font", "Georgia", serif;
+  font-size: 20px;
+  font-style: italic;
+  color: #f7fafc;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Main title styling */
+.main-title {
+  font-family: "heading-font", serif;
+  font-weight: 800;
+  font-size: 48px;
+  color: #1a365d;
+  text-align: center;
+  width: 100%;
+  z-index: 1000;
+  margin-bottom: 30px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Summary text styling */
+.summary-text {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #000000;
+  text-align: justify;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .quote-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .main-title {
+    font-size: 32px;
+  }
+
+  .summary-text {
+    font-size: 16px;
+  }
+
+  .quote-title {
+    font-size: 18px;
+  }
+
+  .quote-content {
+    font-size: 16px;
   }
 }
 
@@ -1788,6 +2081,26 @@ p * * {
   height: fit-content;
 }
 
+/* RIGHT SIDE - IMAGE CONTAINER */
+.content-11 .image-container-11 {
+  /* margin-top: -50rem; */
+  position: sticky;
+  top: 15vh;
+  height: 70vh;
+  width: 100%;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  display: flex;
+  /* align-items: stretch;
+  justify-content: stretch; */
+  transition: all 0.4s ease;
+  /* overflow: hidden; */
+  /* align-self: flex-start; */
+  padding: 0;
+}
+
 .content-11 .section-content-11 h2 {
   margin: 0 0 12px 0;
   font-size: 1.4rem;
@@ -1811,19 +2124,21 @@ p * * {
   color: #fff;
 }
 
-/* HIDDEN STATE - VẪN CÓ THỂ HOVER */
+/* HIDDEN STATE */
 .content-11 .image-container-11.hidden {
-  opacity: 0.3;
-  transform: scale(0.95) translateX(10px);
-  border-color: rgba(255, 255, 255, 0.05);
+  opacity: 0.4;
+  transform: scale(0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.02);
 }
 
 /* VISIBLE STATE */
 .content-11 .image-container-11.visible {
   opacity: 1;
-  transform: scale(1) translateX(0);
+  transform: scale(1);
   border-color: rgba(255, 205, 0, 0.3);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 /* HOVER EFFECT CHO CONTAINER */
@@ -1835,25 +2150,36 @@ p * * {
 
 /* IMAGE INSIDE CONTAINER */
 .content-11 .image-container-11 img {
-  position: absolute;
-  top: 25%;
-  left: 55%;
-  transform: translateX(-50%);
-  max-width: max-content;
   width: 100%;
-  /* height: 400px; */
-  object-fit: cover;
-  border-radius: 8px;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
   transition: all 0.4s ease;
   opacity: 0;
-  visibility: hidden; /* Ẩn hoàn toàn khi không visible */
+  visibility: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  background-color: #c7c6c6;
 }
 
 /* HIỂN THỊ KHI VISIBLE */
 .content-11 .image-container-11.visible img {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative;
+  /* flex: 1; */
   animation: fadeInImage 0.4s ease forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* FADE-IN ANIMATION */
@@ -1880,19 +2206,17 @@ p * * {
 
 /* NO IMAGE PLACEHOLDER */
 .content-11 .no-image-placeholder {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   opacity: 0;
   transition: opacity 0.3s ease;
   visibility: hidden;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
 }
 
 .content-11 .image-container-11.visible .no-image-placeholder {
@@ -1913,19 +2237,17 @@ p * * {
 
 /* DEFAULT PLACEHOLDER */
 .content-11 .default-image-placeholder {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   opacity: 0;
   transition: opacity 0.3s ease;
   visibility: hidden;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
 }
 
 .content-11 .image-container-11.visible .default-image-placeholder {
@@ -1942,14 +2264,16 @@ p * * {
 
   .content-11 .image-container-11 {
     order: -1; /* Image above text on tablet */
+    position: relative;
     height: 300px;
     margin-bottom: 20px;
+    top: unset;
   }
 
   .content-11 .image-container-11 img {
-    top: 0;
-    left: 50%;
-    height: 300px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -1963,11 +2287,15 @@ p * * {
   }
 
   .content-11 .image-container-11 {
+    position: relative;
     height: 250px;
+    top: unset;
   }
 
   .content-11 .image-container-11 img {
-    height: 250px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .content-11 .section-content-11 {
@@ -1980,5 +2308,39 @@ p * * {
 
   .content-11 .section-content-11 p {
     font-size: 16px;
+  }
+}
+
+@keyframes waveBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 40%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 60%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
   }
 }
