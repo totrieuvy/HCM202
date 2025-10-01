@@ -1,6 +1,6 @@
 import { useState } from "react";
-import vnFlag from "./assets/vn_flag.jpg";
-import bgImage from "./assets/lotus.jpg";
+import vnFlag from "../public/assets/vn_flag.jpg";
+import bgImage from "../public/assets/lotus.jpg";
 
 const AiChat = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,10 +39,7 @@ const AiChat = () => {
       ]);
     } catch (error) {
       console.error("Error calling AI API:", error);
-      setMessages((prev) => [
-        ...prev,
-        { type: "response", content: "Error connecting to the AI service." },
-      ]);
+      setMessages((prev) => [...prev, { type: "response", content: "Error connecting to the AI service." }]);
     } finally {
       setIsLoading(false);
     }
@@ -144,8 +141,7 @@ const AiChat = () => {
                 style={{
                   marginBottom: 10,
                   display: "flex",
-                  justifyContent:
-                    msg.type === "user" ? "flex-end" : "flex-start",
+                  justifyContent: msg.type === "user" ? "flex-end" : "flex-start",
                 }}
               >
                 <span
@@ -157,9 +153,7 @@ const AiChat = () => {
                     maxWidth: "70%",
                     fontSize: 15,
                     boxShadow:
-                      msg.type === "user"
-                        ? "0 2px 8px rgba(218,37,29,0.12)"
-                        : "0 2px 8px rgba(255,235,182,0.12)",
+                      msg.type === "user" ? "0 2px 8px rgba(218,37,29,0.12)" : "0 2px 8px rgba(255,235,182,0.12)",
                   }}
                 >
                   {msg.content}

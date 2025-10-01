@@ -1,14 +1,14 @@
 .minigame-container {
-  background: url("../../assets/vietnam-flag-bg.png") center center/cover
-    no-repeat;
+  background: linear-gradient(rgba(220, 20, 60, 0.8), rgba(220, 20, 60, 0.8)),
+    url("../../public/assets/quizz.webp") center center/cover no-repeat;
   color: #fff;
   padding: 20px;
   border-radius: 10px;
+  min-height: 100vh;
 }
 
 .minigame-header {
-  background: url("../../assets/vietnam-flag-bg.png") center center/cover
-    no-repeat;
+  /* background: url("../../public/assets/quizz.webp") center center/cover no-repeat; */
   color: #000;
   padding: 10px;
   font-weight: 600;
@@ -66,15 +66,13 @@
 }
 
 .btn-submit {
-  background: url("../../assets/vietnam-flag-bg.png") center center/cover
-    no-repeat;
+  background: url("../../public/assets/quizz.webp") center center/cover no-repeat;
   color: #000;
   font-weight: 600;
 }
 
 .btn-reset {
-  background: url("../../assets/vietnam-flag-bg.png") center center/cover
-    no-repeat;
+  background: url("../../public/assets/quizz.webp") center center/cover no-repeat;
   color: #000;
   font-weight: 600;
 }
