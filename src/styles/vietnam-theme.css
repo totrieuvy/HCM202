@@ -138,6 +138,21 @@ body.chat-active {
 .ai-chat-messages {
   scroll-behavior: smooth;
   position: relative;
+}
+
+/* Global scroll behavior for route changes */
+html {
+  scroll-behavior: auto;
+}
+
+/* Smooth scroll only for same-page navigation */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Ensure body maintains scroll position reset */
+body {
+  scroll-behavior: auto;
 }107;
   --vn-dark: #2c3e50;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
