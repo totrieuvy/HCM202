@@ -3,6 +3,7 @@ import { Navbar, Nav, Container, Row, Col, Badge } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import MessengerChat from "./MessengerChat";
+import ScrollToTop from "./ScrollToTop";
 // import FloatingChatButton from "./FloatingChatButton";
 
 const Layout = () => {
@@ -18,6 +19,9 @@ const Layout = () => {
 
   return (
     <>
+      {/* Auto scroll to top when route changes */}
+      <ScrollToTop />
+      
       {/* Header */}
       <Navbar
         bg="danger"
