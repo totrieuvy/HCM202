@@ -1,15 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Form,
-  Button,
-  Badge,
-  InputGroup,
-  Alert,
-} from "react-bootstrap";
+import { Container, Row, Col, Card, Form, Button, Badge, InputGroup, Alert } from "react-bootstrap";
+
 const vnFlag = "/assets/vn_flag.jpg";
 const bgImage = "/assets/lotus.jpg";
 
@@ -23,28 +14,31 @@ const AiChatPage = () => {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef(null);
   const chatContainerRef = useRef(null);
 
+  // Hàm đọc text với ResponsiveVoice
+  const speakText = (text) => {
+    if (window.responsiveVoice) {
+      window.responsiveVoice.cancel(); // Dừng nếu đang đọc
+      window.responsiveVoice.speak(text, "Vietnamese Female", {
+        rate: 1,
+        pitch: 1,
+        volume: 1,
+      });
+    }
+  };
+
   const scrollToBottom = () => {
-    // Chỉ cuộn trong chat container, không cuộn trang
     if (chatContainerRef.current) {
       const container = chatContainerRef.current;
       setTimeout(() => {
-        // Smooth scroll trong container
-        container.scrollTo({
-          top: container.scrollHeight,
-          behavior: "smooth",
-        });
+        container.scrollTo({ top: container.scrollHeight, behavior: "smooth" });
       }, 100);
     }
   };
 
   useEffect(() => {
-    // Chỉ scroll khi có tin nhắn mới (không phải lần đầu load trang)
-    if (messages.length > 1) {
-      scrollToBottom();
-    }
+    if (messages.length > 1) scrollToBottom();
   }, [messages]);
 
   const handleSend = async () => {
@@ -58,29 +52,27 @@ const AiChatPage = () => {
     try {
       const response = await fetch("https://aziky.duckdns.org/hcm", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: input }),
       });
 
       const data = await response.json();
-      setMessages((prev) => [
-        ...prev,
-        {
-          type: "ai",
-          content: data.message || "Xin lỗi, tôi không thể xử lý câu hỏi này.",
-        },
-      ]);
+      const aiMessage = {
+        type: "ai",
+        content: data.message || "Xin lỗi, tôi không thể xử lý câu hỏi này.",
+      };
+      setMessages((prev) => [...prev, aiMessage]);
+
+      // đọc response AI
+      speakText(aiMessage.content);
     } catch (error) {
       console.error("Error calling AI API:", error);
-      setMessages((prev) => [
-        ...prev,
-        {
-          type: "error",
-          content: "Lỗi kết nối đến dịch vụ AI. Vui lòng thử lại sau.",
-        },
-      ]);
+      const errorMessage = {
+        type: "error",
+        content: "Lỗi kết nối đến dịch vụ AI. Vui lòng thử lại sau.",
+      };
+      setMessages((prev) => [...prev, errorMessage]);
+      speakText(errorMessage.content);
     } finally {
       setIsLoading(false);
     }
@@ -89,9 +81,7 @@ const AiChatPage = () => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      if (!isLoading) {
-        handleSend();
-      }
+      if (!isLoading) handleSend();
     }
   };
 
@@ -114,10 +104,7 @@ const AiChatPage = () => {
   ];
 
   return (
-    <Container
-      className="py-5 ai-chat-container"
-      style={{ minHeight: "100vh" }}
-    >
+    <Container className="py-5 ai-chat-container" style={{ minHeight: "100vh" }}>
       <Row className="justify-content-center">
         <Col lg={8}>
           {/* Header */}
@@ -125,19 +112,12 @@ const AiChatPage = () => {
             <Badge bg="warning" text="dark" className="mb-3 fs-6">
               AI Assistant
             </Badge>
-            <h1 className="display-4 fw-bold text-danger mb-3">
-              Trò Chuyện Với AI
-            </h1>
-            <p className="lead text-muted">
-              Tìm hiểu về lịch sử thông qua trí tuệ nhân tạo
-            </p>
+            <h1 className="display-4 fw-bold text-danger mb-3">Trò Chuyện Với AI</h1>
+            <p className="lead text-muted">Tìm hiểu về lịch sử thông qua trí tuệ nhân tạo</p>
           </div>
 
-          {/* Chat Interface */}
-          <Card
-            className="shadow-lg border-0 ai-chat-card"
-            style={{ height: "600px" }}
-          >
+          {/* Chat Card */}
+          <Card className="shadow-lg border-0 ai-chat-card" style={{ height: "600px" }}>
             <Card.Header
               className="bg-danger text-white d-flex align-items-center justify-content-between"
               style={{
@@ -153,17 +133,10 @@ const AiChatPage = () => {
                 />
                 <div>
                   <h5 className="mb-0">AI Lịch Sử Việt Nam</h5>
-                  <small className="opacity-75">
-                    Chuyên gia về Chủ tịch Hồ Chí Minh
-                  </small>
+                  <small className="opacity-75">Chuyên gia về Chủ tịch Hồ Chí Minh</small>
                 </div>
               </div>
-              <Button
-                variant="outline-light"
-                size="sm"
-                onClick={clearChat}
-                className="border-0"
-              >
+              <Button variant="outline-light" size="sm" onClick={clearChat} className="border-0">
                 <i className="bi bi-arrow-clockwise"></i>
               </Button>
             </Card.Header>
@@ -194,39 +167,29 @@ const AiChatPage = () => {
                   <div key={index} className="mb-3">
                     {message.type === "user" ? (
                       <div className="d-flex justify-content-end">
-                        <div
-                          className="bg-danger text-white p-3 rounded-3 shadow-sm"
-                          style={{ maxWidth: "70%" }}
-                        >
+                        <div className="bg-danger text-white p-3 rounded-3 shadow-sm" style={{ maxWidth: "70%" }}>
                           <div className="fw-bold mb-1">
-                            <i className="bi bi-person-fill me-2"></i>
-                            Bạn
+                            <i className="bi bi-person-fill me-2"></i> Bạn
                           </div>
                           <div>{message.content}</div>
                         </div>
                       </div>
                     ) : message.type === "ai" ? (
                       <div className="d-flex justify-content-start">
-                        <div
-                          className="bg-light border p-3 rounded-3 shadow-sm"
-                          style={{ maxWidth: "70%" }}
-                        >
+                        <div className="bg-light border p-3 rounded-3 shadow-sm" style={{ maxWidth: "70%" }}>
                           <div className="fw-bold mb-1 text-danger">
-                            <i className="bi bi-robot me-2"></i>
-                            AI Assistant
+                            <i className="bi bi-robot me-2"></i> AI Assistant
                           </div>
                           <div className="text-dark">{message.content}</div>
                         </div>
                       </div>
                     ) : message.type === "system" ? (
                       <Alert variant="info" className="text-center">
-                        <i className="bi bi-info-circle me-2"></i>
-                        {message.content}
+                        <i className="bi bi-info-circle me-2"></i> {message.content}
                       </Alert>
                     ) : (
                       <Alert variant="danger">
-                        <i className="bi bi-exclamation-triangle me-2"></i>
-                        {message.content}
+                        <i className="bi bi-exclamation-triangle me-2"></i> {message.content}
                       </Alert>
                     )}
                   </div>
@@ -236,34 +199,27 @@ const AiChatPage = () => {
                   <div className="d-flex justify-content-start mb-3">
                     <div className="bg-light border p-3 rounded-3 shadow-sm">
                       <div className="fw-bold mb-1 text-danger">
-                        <i className="bi bi-robot me-2"></i>
-                        AI Assistant
+                        <i className="bi bi-robot me-2"></i> AI Assistant
                       </div>
                       <div className="text-muted">
-                        <span
-                          className="spinner-grow spinner-grow-sm me-2"
-                          role="status"
-                        ></span>
+                        <span className="spinner-grow spinner-grow-sm me-2" role="status"></span>
                         Đang suy nghĩ...
                       </div>
                     </div>
                   </div>
                 )}
-                <div ref={messagesEndRef} />
               </div>
 
               {/* Suggested Questions */}
               {messages.length === 1 && (
                 <div className="p-3 bg-light border-top">
-                  <small className="text-muted d-block mb-2">
-                    Câu hỏi gợi ý:
-                  </small>
+                  <small className="text-muted d-block mb-2">Câu hỏi gợi ý:</small>
                   <div className="d-flex flex-wrap gap-2">
                     {suggestedQuestions.map((question, index) => (
                       <Badge
                         key={index}
                         bg="outline-danger"
-                        className="p-2 cursor-pointer "
+                        className="p-2 cursor-pointer"
                         style={{ cursor: "pointer", color: "#000000ff" }}
                         onClick={() => setInput(question)}
                       >
@@ -300,10 +256,7 @@ const AiChatPage = () => {
                       className="px-4"
                     >
                       {isLoading ? (
-                        <span
-                          className="spinner-border spinner-border-sm"
-                          role="status"
-                        ></span>
+                        <span className="spinner-border spinner-border-sm" role="status"></span>
                       ) : (
                         <i className="bi bi-send-fill"></i>
                       )}
@@ -313,27 +266,6 @@ const AiChatPage = () => {
               </div>
             </Card.Body>
           </Card>
-
-          {/* Help Section */}
-          {/* <div className="mt-4">
-            <Alert variant="light" className="border">
-              <Alert.Heading className="h6">
-                <i className="bi bi-lightbulb me-2 text-warning"></i>
-                Mẹo sử dụng AI Chat
-              </Alert.Heading>
-              <ul className="mb-0 small">
-                <li>Hỏi về các sự kiện lịch sử cụ thể trong cuộc đời Bác Hồ</li>
-                <li>
-                  Tìm hiểu về tư tưởng và triết lý của Chủ tịch Hồ Chí Minh
-                </li>
-                <li>
-                  Khám phá những người bạn và đồng chí của Bác trong hành trình
-                  cách mạng
-                </li>
-                <li>Sử dụng câu hỏi gợi ý để bắt đầu cuộc trò chuyện</li>
-              </ul>
-            </Alert>
-          </div> */}
         </Col>
       </Row>
     </Container>
