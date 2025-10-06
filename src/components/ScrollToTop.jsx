@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -7,7 +7,7 @@ const ScrollToTop = () => {
   useEffect(() => {
     // Scroll lên đầu trang ngay lập tức khi route thay đổi
     window.scrollTo(0, 0);
-    
+
     // Fallback để đảm bảo scroll reset
     const timer = setTimeout(() => {
       if (window.scrollY > 0) {

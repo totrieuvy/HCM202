@@ -21,7 +21,7 @@ const Layout = () => {
     <>
       {/* Auto scroll to top when route changes */}
       <ScrollToTop />
-      
+
       {/* Header */}
       <Navbar
         bg="danger"
