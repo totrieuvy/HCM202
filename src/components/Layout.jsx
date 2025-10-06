@@ -11,7 +11,15 @@ const Layout = () => {
   const location = useLocation();
 
   const handleChatToggle = () => {
-    setShowChat(!showChat);
+    const newShowChat = !showChat;
+    setShowChat(newShowChat);
+    
+    // Add/remove chat-active class to body for mobile
+    if (newShowChat) {
+      document.body.classList.add('chat-active');
+    } else {
+      document.body.classList.remove('chat-active');
+    }
   };
 
   // Don't show floating button on home page since it has its own

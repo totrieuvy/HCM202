@@ -84,8 +84,13 @@ const MessengerChat = ({ show, onClose }) => {
           style={{
             bottom: "90px",
             right: "20px",
-            zIndex: 1050,
+            width: "350px",
+            height: "450px",
+            maxWidth: "95vw",
+            maxHeight: "80vh",
+            zIndex: 9999,
             overflow: "hidden",
+            borderRadius: "16px",
           }}
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -241,18 +246,27 @@ const MessengerChat = ({ show, onClose }) => {
               </div>
             </Card.Body>
 
-            <div className="p-2 border-top bg-white">
+            <div 
+              className="p-2 border-top bg-white position-sticky"
+              style={{
+                bottom: 0,
+                zIndex: 100,
+                minHeight: "60px"
+              }}
+            >
               <InputGroup size="sm">
                 <Form.Control
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Aa"
+                  placeholder="Nhập tin nhắn..."
                   disabled={isLoading}
                   className="border-0 bg-light"
                   style={{
                     borderRadius: "20px",
-                    fontSize: "14px",
+                    fontSize: "16px",
+                    padding: "8px 12px",
+                    minHeight: "40px",
                   }}
                 />
                 <Button
@@ -261,6 +275,10 @@ const MessengerChat = ({ show, onClose }) => {
                   disabled={isLoading || input.trim() === ""}
                   className="border-0 text-danger p-2"
                   title="Gửi"
+                  style={{
+                    minWidth: "44px",
+                    minHeight: "44px"
+                  }}
                 >
                   <i className="bi bi-send-fill"></i>
                 </Button>
