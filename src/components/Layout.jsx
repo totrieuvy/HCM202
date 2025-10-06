@@ -21,7 +21,7 @@ const Layout = () => {
     <>
       {/* Auto scroll to top when route changes */}
       <ScrollToTop />
-      
+
       {/* Header */}
       <Navbar
         bg="danger"
@@ -33,13 +33,13 @@ const Layout = () => {
       >
         <Container>
           <Navbar.Brand as={Link} to="/" className="fw-bold fs-4">
-            <img
+            {/* <img
               src="/assets/lotus.jpg"
               width="45"
               height="45"
               className="d-inline-block align-top me-3 rounded-circle shadow-sm"
               alt="Logo"
-            />
+            /> */}
             <span style={{ fontSize: "1.3rem" }}>
               Hồ Chí Minh - Tìm Đường Cứu Nước
             </span>

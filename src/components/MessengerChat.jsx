@@ -84,10 +84,7 @@ const MessengerChat = ({ show, onClose }) => {
           style={{
             bottom: "90px",
             right: "20px",
-            width: "350px",
-            height: "450px",
             zIndex: 1050,
-            borderRadius: "16px",
             overflow: "hidden",
           }}
           initial={{ opacity: 0, scale: 0.8, y: 20 }}

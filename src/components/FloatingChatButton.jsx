@@ -27,7 +27,7 @@ const FloatingChatButton = ({ onClick, isActive = false }) => {
     >
       <Button
         onClick={onClick}
-        className="rounded-circle shadow-lg border-0"
+        className="rounded-circle shadow-lg border-0 floating-chat-btn"
         style={{
           width: "70px",
           height: "70px",
