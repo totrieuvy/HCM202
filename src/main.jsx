@@ -11,6 +11,7 @@ import About from "./pages/About";
 import MiniGamePage from "./pages/MiniGamePage";
 import AiChatPage from "./pages/AiChatPage";
 import NotFound from "./pages/NotFound";
+import MapJourney from "./pages/MapJourney";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="about" element={<About />} />
           <Route path="minigame" element={<MiniGamePage />} />
           <Route path="aichat" element={<AiChatPage />} />
+          <Route path="map" element={<MapJourney />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
