@@ -246,12 +246,12 @@ const MessengerChat = ({ show, onClose }) => {
               </div>
             </Card.Body>
 
-            <div 
+            <div
               className="p-2 border-top bg-white position-sticky"
               style={{
                 bottom: 0,
                 zIndex: 100,
-                minHeight: "60px"
+                minHeight: "60px",
               }}
             >
               <InputGroup size="sm">
@@ -277,7 +277,7 @@ const MessengerChat = ({ show, onClose }) => {
                   title="Gửi"
                   style={{
                     minWidth: "44px",
-                    minHeight: "44px"
+                    minHeight: "44px",
                   }}
                 >
                   <i className="bi bi-send-fill"></i>

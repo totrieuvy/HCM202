@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import TimelineModal from "../components/TimelineModal";
 import ChatSidebar from "../components/ChatSidebar";
 import FloatingChatButton from "../components/FloatingChatButton";
+import { Link } from "react-router-dom";
 
 // Import images - using public assets
 const BOSTOM = "/assets/boston-C63CgLHY.png";
@@ -385,12 +386,12 @@ const Home = () => {
               </p>
             </Col>
             <Col lg={4} className="text-lg-end" data-aos="fade-left">
-              <a href="/minigame" className="btn btn-danger btn-lg me-3">
+              <Link to="/minigame" className="btn btn-danger btn-lg me-3">
                 Mini Game
-              </a>
-              <a href="/aichat" className="btn btn-outline-danger btn-lg">
+              </Link>
+              <Link to="/aichat" className="btn btn-outline-danger btn-lg">
                 AI Chat
-              </a>
+              </Link>
             </Col>
           </Row>
         </Container>

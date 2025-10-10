@@ -13,12 +13,12 @@ const Layout = () => {
   const handleChatToggle = () => {
     const newShowChat = !showChat;
     setShowChat(newShowChat);
-    
+
     // Add/remove chat-active class to body for mobile
     if (newShowChat) {
-      document.body.classList.add('chat-active');
+      document.body.classList.add("chat-active");
     } else {
-      document.body.classList.remove('chat-active');
+      document.body.classList.remove("chat-active");
     }
   };
 
