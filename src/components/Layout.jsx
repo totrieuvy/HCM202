@@ -67,6 +67,10 @@ const Layout = () => {
                 <i className="bi bi-controller me-2"></i>
                 Mini Game
               </Nav.Link>
+              <Nav.Link as={Link} to="/map" className="mx-2 px-3">
+                <i className="bi bi-map me-2"></i>
+                Map
+              </Nav.Link>
               <Nav.Link as={Link} to="/aichat" className="mx-2 px-3">
                 <i className="bi bi-robot me-2"></i>
                 AI Chat
