@@ -14,25 +14,40 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: "Võ Minh Trí",
-      role: "Project Manager & Frontend Developer",
+      name: "Võ Minh Trí - SE183322",
+      role: "Leader & Thiết kế web",
       skills: ["React", "Bootstrap", "Project Management"],
-      description:
-        "Chịu trách nhiệm quản lý dự án và phát triển giao diện người dùng.",
+      description: "Chịu trách nhiệm quản lý dự án, phát triển giao diện người dùng, kiểm tra nội dung.",
     },
     {
-      name: "Trần Thị B",
-      role: "Backend Developer & AI Integration",
+      name: "Tô Triều Vỹ - SE183178",
+      role: "Thiết kế web & làm nội dung",
       skills: ["Node.js", "AI Integration", "API Development"],
-      description:
-        "Phát triển backend và tích hợp các dịch vụ AI cho ứng dụng.",
+      description: "Phát triển giao diện người dùng và tìm hiểu nội dung cho trang web.",
     },
     {
-      name: "Lê Văn C",
-      role: "UI/UX Designer & Content Creator",
+      name: "Phạm Cẩm Hoàng - SE183867",
+      role: "Chatbox AI",
       skills: ["UI/UX Design", "Content Writing", "Historical Research"],
-      description:
-        "Thiết kế giao diện và nghiên cứu nội dung lịch sử cho dự án.",
+      description: "Chatbox AI.",
+    },
+    {
+      name: "Đỗ Minh Quang - SE170316",
+      role: "Thuyết  trình",
+      skills: ["UI/UX Design", "Content Writing", "Historical Research"],
+      description: "Thuyết  trình",
+    },
+    {
+      name: "Đỗ Lê Châu Nhật Minh - SE173451",
+      role: "Thuyết  trình",
+      skills: ["UI/UX Design", "Content Writing", "Historical Research"],
+      description: "Thuyết  trình",
+    },
+    {
+      name: "Nguyễn Tâm Đan - SE181527",
+      role: "Tìm hiểu nội dung cho trang web",
+      skills: ["UI/UX Design", "Content Writing", "Historical Research"],
+      description: "Tìm hiểu nội dung cho trang web",
     },
   ];
 
@@ -42,8 +57,7 @@ const About = () => {
       items: [
         {
           name: "React 19.1.1",
-          description:
-            "Thư viện JavaScript hiện đại cho xây dựng giao diện người dùng",
+          description: "Thư viện JavaScript hiện đại cho xây dựng giao diện người dùng",
         },
         {
           name: "Bootstrap 5",
@@ -129,8 +143,7 @@ const About = () => {
       <section
         className="py-5 text-white position-relative"
         style={{
-          background:
-            "linear-gradient(135deg, #dc3545 0%, #c82333 50%, #ffc107 100%)",
+          background: "linear-gradient(135deg, #dc3545 0%, #c82333 50%, #ffc107 100%)",
           minHeight: "60vh",
           display: "flex",
           alignItems: "center",
@@ -148,9 +161,8 @@ const About = () => {
             </Badge>
             <h1 className="display-3 fw-bold mb-4">Dự Án Giáo Dục Lịch Sử</h1>
             <p className="lead mb-4 opacity-90">
-              Ứng dụng web tương tác về hành trình 30 năm tìm đường cứu nước của
-              Chủ tịch Hồ Chí Minh, được phát triển với công nghệ hiện đại và
-              trí tuệ nhân tạo.
+              Ứng dụng web tương tác về hành trình 30 năm tìm đường cứu nước của Chủ tịch Hồ Chí Minh, được phát triển
+              với công nghệ hiện đại và trí tuệ nhân tạo.
             </p>
           </motion.div>
         </Container>
@@ -166,9 +178,7 @@ const About = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h2 className="display-4 fw-bold text-danger mb-4">
-              Tổng Quan Dự Án
-            </h2>
+            <h2 className="display-4 fw-bold text-danger mb-4">Tổng Quan Dự Án</h2>
           </motion.div>
 
           <Row className="g-4">
@@ -183,8 +193,8 @@ const About = () => {
                   </div>
                   <h5 className="fw-bold mb-3">Giáo Dục Tương Tác</h5>
                   <p className="text-muted">
-                    Timeline tương tác với hiệu ứng động, giúp người dùng khám
-                    phá lịch sử một cách sinh động và hấp dẫn.
+                    Timeline tương tác với hiệu ứng động, giúp người dùng khám phá lịch sử một cách sinh động và hấp
+                    dẫn.
                   </p>
                 </Card.Body>
               </Card>
@@ -201,8 +211,8 @@ const About = () => {
                   </div>
                   <h5 className="fw-bold mb-3">Trí Tuệ Nhân Tạo</h5>
                   <p className="text-muted">
-                    Tích hợp AI chatbot chuyên biệt về lịch sử Việt Nam, trả lời
-                    câu hỏi một cách thông minh và chính xác.
+                    Tích hợp AI chatbot chuyên biệt về lịch sử Việt Nam, trả lời câu hỏi một cách thông minh và chính
+                    xác.
                   </p>
                 </Card.Body>
               </Card>
@@ -219,8 +229,7 @@ const About = () => {
                   </div>
                   <h5 className="fw-bold mb-3">Mini Game</h5>
                   <p className="text-muted">
-                    Trắc nghiệm kiến thức với giao diện hiện đại, giúp củng cố
-                    và đánh giá hiểu biết về lịch sử.
+                    Trắc nghiệm kiến thức với giao diện hiện đại, giúp củng cố và đánh giá hiểu biết về lịch sử.
                   </p>
                 </Card.Body>
               </Card>
@@ -236,42 +245,19 @@ const About = () => {
             <Badge bg="danger" className="mb-3 fs-6">
               Đội Ngũ
             </Badge>
-            <h2 className="display-4 fw-bold text-danger">
-              Thành Viên Tham Gia
-            </h2>
+            <h2 className="display-4 fw-bold text-danger">Thành Viên Tham Gia</h2>
           </div>
 
           <Row className="g-4">
             {teamMembers.map((member, index) => (
-              <Col
-                lg={4}
-                key={index}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
+              <Col lg={4} key={index} data-aos="fade-up" data-aos-delay={index * 100}>
                 <Card className="border-0 shadow-sm h-100">
                   <Card.Body className="text-center p-4">
-                    <motion.img
-                      src={member.avatar}
-                      alt={member.name}
-                      className="rounded-circle mb-3 shadow"
-                      style={{
-                        width: "120px",
-                        height: "120px",
-                        objectFit: "cover",
-                      }}
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    />
                     <h5 className="fw-bold text-danger">{member.name}</h5>
                     <p className="text-muted mb-3">{member.role}</p>
                     <div className="mb-3">
                       {member.skills.map((skill, skillIndex) => (
-                        <Badge
-                          key={skillIndex}
-                          bg="outline-danger"
-                          className="me-2 mb-2"
-                        >
+                        <Badge key={skillIndex} bg="outline-danger" className="me-2 mb-2">
                           {skill}
                         </Badge>
                       ))}
@@ -292,19 +278,12 @@ const About = () => {
             <Badge bg="success" className="mb-3 fs-6">
               Công Nghệ
             </Badge>
-            <h2 className="display-4 fw-bold text-success">
-              Công Nghệ Sử Dụng
-            </h2>
+            <h2 className="display-4 fw-bold text-success">Công Nghệ Sử Dụng</h2>
           </div>
 
           <Row className="g-4">
             {technologies.map((tech, index) => (
-              <Col
-                lg={6}
-                key={index}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
+              <Col lg={6} key={index} data-aos="fade-up" data-aos-delay={index * 100}>
                 <Card className="border-0 shadow-sm h-100">
                   <Card.Header
                     className="bg-gradient text-white"
@@ -325,12 +304,8 @@ const About = () => {
                         whileHover={{ x: 10 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
-                        <h6 className="fw-bold text-success mb-1">
-                          {item.name}
-                        </h6>
-                        <p className="text-muted small mb-0">
-                          {item.description}
-                        </p>
+                        <h6 className="fw-bold text-success mb-1">{item.name}</h6>
+                        <p className="text-muted small mb-0">{item.description}</p>
                       </motion.div>
                     ))}
                   </Card.Body>
@@ -425,22 +400,13 @@ const About = () => {
                 viewport={{ once: true }}
               >
                 <h3 className="fw-bold mb-4">Khám Phá Hành Trình Lịch Sử</h3>
-                <p className="lead mb-4">
-                  Bắt đầu cuộc hành trình tìm hiểu về 30 năm tìm đường cứu nước
-                  của Bác Hồ
-                </p>
-                <motion.div
-                  className="d-flex gap-3 justify-content-center"
-                  whileHover={{ scale: 1.05 }}
-                >
+                <p className="lead mb-4">Bắt đầu cuộc hành trình tìm hiểu về 30 năm tìm đường cứu nước của Bác Hồ</p>
+                <motion.div className="d-flex gap-3 justify-content-center" whileHover={{ scale: 1.05 }}>
                   <a href="/" className="btn btn-warning btn-lg px-4">
                     <i className="bi bi-house me-2"></i>
                     Về Trang Chủ
                   </a>
-                  <a
-                    href="/minigame"
-                    className="btn btn-outline-light btn-lg px-4"
-                  >
+                  <a href="/minigame" className="btn btn-outline-light btn-lg px-4">
                     <i className="bi bi-controller me-2"></i>
                     Chơi Game
                   </a>
