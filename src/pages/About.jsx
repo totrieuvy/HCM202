@@ -39,9 +39,9 @@ const About = () => {
     },
     {
       name: "Đỗ Lê Châu Nhật Minh - SE173451",
-      role: "Thuyết  trình",
+      role: "Thiết kế Web & Thuyết  trình",
       skills: ["UI/UX Design", "Content Writing", "Historical Research"],
-      description: "Thuyết  trình",
+      description: "Phát triển giao diện người dùng và thuyết  trình",
     },
     {
       name: "Nguyễn Tâm Đan - SE181527",
